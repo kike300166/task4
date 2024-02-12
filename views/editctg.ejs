@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Categoria</title>
+	    <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="https://img.freepik.com/vector-premium/icono-camara-minimalista-e-iconico_313877-12100.jpg" type="">
+
+    <style>
+		@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+	
+	* {
+		box-sizing: border-box;
+	}
+	
+	body {
+		background-color: #8c70d8;
+		font-family: 'Open Sans', sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		margin: 0;
+	}
+	
+	.container {
+		background-color: #fff;
+		border-radius: 15px;
+		box-shadow: 0 2px 20px 0px #03153b2e;
+		overflow: hidden;
+		width: 400px;
+		max-width: 100%;
+	}
+	
+	.header {
+		border-bottom: 1px solid #f0f0f0;
+		background-color: #ccd8ef;
+		padding: 20px 40px;
+	}
+	
+	.header h2 {
+		margin: 0;
+		color: #212C42;
+	}
+	
+	.form {
+		padding: 30px 40px;	
+		font-weight: 500;
+		color: #1546b1;
+	}
+	
+	.form-control {
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+		position: relative;
+	}
+	
+	.form-control label {
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	
+	.form-control input {
+		border: 2px solid #f0f0f0;
+		border-radius: 4px;
+		display: block;
+		font-family: inherit;
+		font-size: 14px;
+		padding: 10px;
+		width: 100%;
+	}
+	
+	.form-control input:focus {
+		outline: 0;
+		border-color: #777;
+	}
+	
+	.form-control.success input {
+		border-color: #a2cc2e;
+	}
+	
+	.form-control.error input {
+		border-color: #b48c1f;
+	}
+	
+	.form-control i {
+		visibility: hidden;
+		position: absolute;
+		top: 40px;
+		right: 10px;
+	}
+	
+	.form-control.success i.fa-check-circle {
+		color: #92d8af;
+		visibility: visible;
+	}
+	
+	.form-control.error i.fa-exclamation-circle {
+		color: #df200b;
+		visibility: visible;
+	}
+	
+	.form-control small {
+		color: #e7b6b0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		visibility: hidden;
+	}
+	
+	.form-control.error small {
+		visibility: visible;
+	}
+	
+	.form button {
+		background-color: #2bb1b6;
+		border: 2px solid #3ccee7;
+		border-radius: 4px;
+		color: #fff;
+		display: block;
+		font-family: inherit;
+		font-size: 16px;
+		padding: 10px;
+		margin-top: 20px;
+		width: 100%;
+		cursor: pointer;
+		transition: 0.6s;
+	}
+	
+	.form button:hover {
+		transform: scale(0.95);
+		opacity: .8;
+	}
+	
+	input::placeholder {
+		color: #1d346565;
+	}
+	
+	
+	
+	
+	form {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	select {
+	  width: 100%;
+	  padding: 10px;
+	  margin-bottom: 10px;
+	  color:rgb(83, 16, 170);
+	  border: 1px solid rgb(108, 34, 179);
+	  outline: none;
+	}
+	
+	button {
+				padding: 10px 20px;
+				background-color:rgb(107, 35, 202);
+				color: white;
+				border: none;
+				border-radius: 5px;
+				outline: none;
+				cursor: pointer;
+			}
+	
+			button:hover {
+				background-color: rgb(131, 34, 175);
+			}
+
+			.return-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: rgb(108, 17, 182) ;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .return-button:hover {
+            background-color: rgb(147, 34, 199) ;
+        }
+	</style>
+</head>
+<body>
+    <div  class="container">
+
+        <div>
+            <a class="nav-link return-button" href="/logout">Salir.</a>
+        </div>
+        <div class="header">
+			<h2>Actualizar Categoria</h2>
+		</div>
+        <hr>
+
+        <form action="/updatectg/<%= categorias.id %>" method="post">
+            <div style="margin-top: 20px; margin-bottom: 20px;"><input type="text" name="nombre" id="nombre" value="<%= categorias.nombre %>" required maxlength="25" minlength="4"></div>
+            <div style="margin-top: 20px; margin-bottom: 20px;"><button type="submit" class="btn btn-primary">Actualizar Categoria</button></div>
+        </form>
+    </div>
+</body>
+</html>

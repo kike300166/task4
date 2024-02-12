@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Imagen</title>
+        <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="https://img.freepik.com/vector-premium/icono-camara-minimalista-e-iconico_313877-12100.jpg" type="">
+
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid rgb(176, 16, 182);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgb(132, 13, 179);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(144, 28, 190);
+        }
+
+        h4,
+        h3 {
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .return-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: rgb(141, 26, 170);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .return-button:hover {
+            background-color: rgb(110, 26, 179);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <a class="nav-link return-button" href="/logout">Salir.</a>
+        </div>
+
+        <div class="header">
+        <h2>¿Está seguro de eliminar esta Imagen?</h2>
+        </div>
+        <hr>
+        <form action="/deleteimg/<%= imagenes.id %>" method="get">
+            <div style="margin-top: 10px; margin-bottom: 10px;"><img src="<%= imagenes.url %>"></div>
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+                <h4>
+                    <%= imagenes.destacado %>
+                </h4>
+            </div>
+            <hr>
+            <div style="margin-top: 10px; margin-bottom: 10px;"><button type="submit" class="btn btn-primary">Eliminar
+                    Imagen</button></div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,16 +1,29 @@
 {
-  "name": "task0",
+  "name": "programacion-3",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "~1.4.6",
+    "debug": "^4.3.4",
+    "dotenv": "^16.4.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "googleapis": "^131.0.0",
+    "http-errors": "^2.0.0",
+    "morgan": "~1.10.0",
+    "node-addon-api": "^6.1.0",
+    "nodemailer": "^6.9.9",
+    "request": "^2.88.2",
+    "request-ip": "^3.3.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

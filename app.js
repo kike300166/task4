@@ -1,8 +1,17 @@
+require ('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var request = require ('request');
+var requestIP= require ('request-ip');
+var axios = require ('axios');
+var nodemailer = require ('nodemailer');
+
+console.log(process.env.USER);
+console.log(process.env.PASSWORD);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -18,6 +27,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -38,4 +52,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+
+
 module.exports = app;
+
+
+
+
